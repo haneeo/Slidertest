@@ -70,23 +70,43 @@ function draw() {
 	myAnimSWIM();
 	pop();
 
-// for (let c = 0; c < 600; c = c + 100) {
-// 	push();
-// 	translate(width/2-300+c,height*0.7);
-// 	strokeWeight(2);
-// 	stroke(50);
-// 	noFill();
-// 	scale(1*slider4_value);
-// 	rotate(tan(frameCount)*20);
-// 	arc(0, 0, 50, 50, 0-30 ,90);
-// 	rotate(tan(frameCount)*20);
-// 	arc(0, 0, 60, 60, 90-30, 180);
-// 	rotate(tan(frameCount)*20);
-// 	arc(0, 0, 70, 70, 180-30, 270);
-// 	rotate(tan(frameCount)*20);
-// 	arc(0, 0, 80, 80, 270-30, 360);
-// 	pop();
-// }
+for (let c = 0; c < 600; c = c + 200) {
+	push();
+	translate(width/2-100+c,height*0.15);
+	strokeWeight(1);
+	stroke(100);
+	noFill();
+	scale(1*slider4_value);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 100, 100, 0-30 ,90);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 120, 120, 90-30, 180);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 130, 130, 180-30, 270);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 140, 140, 270-30, 360);
+	pop();
+}
+		
+
+	
+for (let c = 0; c < 600; c = c + 200) {
+	push();
+	translate(width/2-500+c,height*0.8);
+	strokeWeight(1);
+	stroke(100);
+	noFill();
+	scale(1*slider4_value);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 50, 50, 0-30 ,90);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 60, 60, 90-30, 180);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 70, 70, 180-30, 270);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 80, 80, 270-30, 360);
+	pop();
+}
 	
 for(let i = 0; i < width; i = i + 80) {
 	//위 물결
