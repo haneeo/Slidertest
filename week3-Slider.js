@@ -65,64 +65,63 @@ function draw() {
 	
 	push();
 	//가운데 단어
-	translate(90,250+slider1_value);
-	scale(1);
+	translate(width/2,height/2+slider1_value);
+	scale(2);
 	myAnimSWIM();
 	pop();
 
 for (let c = 0; c < 600; c = c + 100) {
 	push();
-	translate(150+c,400);
+	translate(width/2-300+c,height*0.7);
 	strokeWeight(2);
-	stroke(255);
+	stroke(50);
 	noFill();
 	scale(1*slider4_value);
-	rotate(tan(frameCount)*5);
-	arc(50, 55, 50, 50, 0-30 ,90);
-	rotate(tan(frameCount)*5);
-	arc(50, 55, 60, 60, 90-30, 180);
-	rotate(tan(frameCount)*5);
-	arc(50, 55, 70, 70, 180-30, 270);
-	rotate(tan(frameCount)*5);
-	arc(50, 55, 80, 80, 270-30, 360);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 50, 50, 0-30 ,90);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 60, 60, 90-30, 180);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 70, 70, 180-30, 270);
+	rotate(tan(frameCount)*20);
+	arc(0, 0, 80, 80, 270-30, 360);
 	pop();
 }
 	
-for(let i = 0; i < 300; i = i + 40) {
+for(let i = 0; i < width; i = i + 40) {
 	//위 물결
 	push();
-	translate(i+200,0);
+	translate(i+200,height*0.05);
 	
 	push();
 	translate(sin(frameCount)*20,50);
-	scale(0.1,0.1-(mouseX*0.0003));
+	scale(0.1,0.1-(mouseX*0.0001));
 	myAnimSWIM();
 	pop();
 	
 	push();
 	translate(-sin(frameCount)*20,90);
-	scale(0.1,0.1-(mouseX*0.0003));
+	scale(0.1,0.1-(mouseX*0.0002));
 	myAnimSWIM();
 	pop();
 	
 	pop();
 	}
 	
-for(let i = 0; i < 300; i = i + 40) {
+for(let i = 0; i < width; i = i + 40) {
 	//아래 물결
 	push();
-	translate(i+50,500);
+	translate(i-200,height*0.75);
 	
 	push();
 	translate(sin(frameCount)*20,50);
-	scale(0.1,0.1+(mouseX*0.0003));
-	fill('white');
+	scale(0.1,0.1-(mouseX*0.0001));
 	myAnimSWIM();
 	pop();
 	
 	push();
 	translate(-sin(frameCount)*20,90);
-	scale(0.1,0.1+(mouseX*0.0003));
+	scale(0.1,0.1-(mouseX*0.0002));
 	myAnimSWIM();
 	pop();
 	
@@ -146,31 +145,36 @@ for(let i = 0; i < 300; i = i + 40) {
 }
 
 function myAnimSWIM() {
+	push();
+	translate(0, -80);
+	
 		push();
-		translate(0, sin(frameCount*slider3_value)*40*slider2_value);
+		translate(0-200, sin(frameCount*slider3_value)*40*slider2_value);
 		fill(coolors[colorIndex]);
 		myAnimRectS();
 		pop();
 
 		push();
-		translate(80, 100+(sin(50+frameCount*slider3_value)*40*slider2_value));
+		translate(80-200, 100+(sin(50+frameCount*slider3_value)*40*slider2_value));
 		scale(1.3, -1);
 		fill(coolors2[colorIndex]);
 		myTriM();
 		pop();
 
 		push();
-		translate(200, (sin(100+frameCount*slider3_value)*40*slider2_value));
+		translate(200-200, (sin(100+frameCount*slider3_value)*40*slider2_value));
 		fill(coolors3[colorIndex]);
 		myAnimRectI();
 		pop();
 
 		push();
-		translate(420, 100+(sin(150+frameCount*slider3_value)*40*slider2_value));
+		translate(420-200, 100+(sin(150+frameCount*slider3_value)*40*slider2_value));
 		scale(-1.3, -1);
 		fill(coolors4[colorIndex]);
 		myRectW();
 		pop();
+	
+	pop();
 }
 
 function CursorIcon() {
