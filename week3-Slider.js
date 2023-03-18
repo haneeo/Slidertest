@@ -46,7 +46,7 @@ function mouseClicked() {
 function draw() {
 	background(0);
 	// drawGrid(20);  				// 모눈종이표
-	showCoordinateNum();  // 마우스 현재 위치 좌표값
+	// showCoordinateNum();  // 마우스 현재 위치 좌표값
 	
 	fill(255, 255, 255);
 	text('위치', 0, 20);
@@ -70,28 +70,29 @@ function draw() {
 	myAnimSWIM();
 	pop();
 
-for (let c = 0; c < 600; c = c + 100) {
-	push();
-	translate(width/2-300+c,height*0.7);
-	strokeWeight(2);
-	stroke(50);
-	noFill();
-	scale(1*slider4_value);
-	rotate(tan(frameCount)*20);
-	arc(0, 0, 50, 50, 0-30 ,90);
-	rotate(tan(frameCount)*20);
-	arc(0, 0, 60, 60, 90-30, 180);
-	rotate(tan(frameCount)*20);
-	arc(0, 0, 70, 70, 180-30, 270);
-	rotate(tan(frameCount)*20);
-	arc(0, 0, 80, 80, 270-30, 360);
-	pop();
-}
+// for (let c = 0; c < 600; c = c + 100) {
+// 	push();
+// 	translate(width/2-300+c,height*0.7);
+// 	strokeWeight(2);
+// 	stroke(50);
+// 	noFill();
+// 	scale(1*slider4_value);
+// 	rotate(tan(frameCount)*20);
+// 	arc(0, 0, 50, 50, 0-30 ,90);
+// 	rotate(tan(frameCount)*20);
+// 	arc(0, 0, 60, 60, 90-30, 180);
+// 	rotate(tan(frameCount)*20);
+// 	arc(0, 0, 70, 70, 180-30, 270);
+// 	rotate(tan(frameCount)*20);
+// 	arc(0, 0, 80, 80, 270-30, 360);
+// 	pop();
+// }
 	
-for(let i = 0; i < width; i = i + 40) {
+for(let i = 0; i < width; i = i + 80) {
 	//위 물결
 	push();
 	translate(i+200,height*0.05);
+	fill(255, 70);
 	
 	push();
 	translate(sin(frameCount)*20,50);
@@ -108,10 +109,11 @@ for(let i = 0; i < width; i = i + 40) {
 	pop();
 	}
 	
-for(let i = 0; i < width; i = i + 40) {
+for(let i = 0; i < width; i = i + 80) {
 	//아래 물결
 	push();
 	translate(i-200,height*0.75);
+	fill(255, 70);
 	
 	push();
 	translate(sin(frameCount)*20,50);
@@ -171,6 +173,35 @@ function myAnimSWIM() {
 		translate(420-200, 100+(sin(150+frameCount*slider3_value)*40*slider2_value));
 		scale(-1.3, -1);
 		fill(coolors4[colorIndex]);
+		myRectW();
+		pop();
+	
+	pop();
+}
+
+function myAnimSWIM2() {
+	push();
+	translate(0, -80);
+	
+		push();
+		translate(0-200, sin(frameCount*slider3_value)*40*slider2_value);
+		myAnimRectS();
+		pop();
+
+		push();
+		translate(80-200, 100+(sin(50+frameCount*slider3_value)*40*slider2_value));
+		scale(1.3, -1);
+		myTriM();
+		pop();
+
+		push();
+		translate(200-200, (sin(100+frameCount*slider3_value)*40*slider2_value));
+		myAnimRectI();
+		pop();
+
+		push();
+		translate(420-200, 100+(sin(150+frameCount*slider3_value)*40*slider2_value));
+		scale(-1.3, -1);
 		myRectW();
 		pop();
 	
