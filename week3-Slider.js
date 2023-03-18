@@ -24,7 +24,7 @@ function setup() {
 	slider2 = createSlider(-20, 20, 1, 1);
 	slider2.position(0, 60);
 	
-	slider3 = createSlider(0, 100, 1, 1);
+	slider3 = createSlider(0, 30, 1, 1);
 	slider3.position(0, 100);
 	
 	slider4 = createSlider(1, 5, 1, 0.1);
